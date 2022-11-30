@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-
+const Port  = process.env.Port || 3000
 app.use(express.json());
 app.use(express.urlencoded((extended=true)));
 ////////////////////////////////////// Routes ///////////////////////////////////////////////////
@@ -34,6 +34,6 @@ db.once("connected",()=>{
 
 
 
-app.listen(3000,()=>{
+app.listen(Port,()=>{
     console.log("server is running");
 })
