@@ -2,13 +2,13 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const Port  = process.env.Port || 3000
+const Port  = process.env.Port || 3003
 app.use(express.json());
 app.use(express.urlencoded((extended=true)));
 ////////////////////////////////////// Routes ///////////////////////////////////////////////////
 const router = require("./Routes/user.js")
 
-app.use("/api",router)
+app.use("/",router)
 
 ////////////////////////////////////// Routes ///////////////////////////////////////////////////
 
@@ -34,6 +34,6 @@ db.once("connected",()=>{
 
 
 
-app.listen(Port,()=>{
-    console.log("server is running");
+app.listen(Port ,()=>{
+    console.log("server is running ");
 })
