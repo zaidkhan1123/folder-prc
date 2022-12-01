@@ -32,5 +32,15 @@ try{
 }
 })
 
+router.delete("/getall:id", async(req,res)=>{
+try{
+  const deletitem = await Model.findByIdAndUpdate(req.params.id);
+  res.status(200).json("item deleted successfully")
+}catch(err){
+ res.json(err);
+}
+})
+
+
 
 module.exports = router;
