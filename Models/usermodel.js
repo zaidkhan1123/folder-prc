@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
         type:String
     },
     age:{
-        required:true,
+        required:false,
         type:String
     }
   })
